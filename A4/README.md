@@ -2,7 +2,10 @@
 
 #### *Group 15: (s203634 & s203595)*
 
-*Please check out our guided tutorial of how to use our tool: "HowToRun.pdf"*
+*Please check out our guided tutorial of how to use our tool: "HowToRun.pdf" or watch the tutorial video through the link: https://www.youtube.com/watch?v=vmxP8bfCp9U*
+
+You can also access the video through this QR qode:
+<img src="https://github.com/frejahbarkler/41934_GR15_A4/blob/main/HowToRun.svg">
 
 **The goal of our tool** is to support the user to verify the structural load capacity. 
 
