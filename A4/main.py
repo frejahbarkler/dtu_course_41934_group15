@@ -910,7 +910,7 @@ for x in floor_array:
     dataset.append(data)
     i=i+1
 
-################################################ VIL DU LAVE EN KOMMENTAR HER?
+# Maps the data so the structure fits the desired excel-strucutre
 dataset = list(map(list, zip(*dataset)))
 
 
