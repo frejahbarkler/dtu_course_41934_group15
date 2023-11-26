@@ -10,7 +10,6 @@
 import numpy as np
 import ifcopenshell
 import ifcopenshell.util.element
-import math as m
 from pathlib import Path
 import pandas as pd
 
@@ -117,7 +116,7 @@ floor_number = []
 i = 0
 for LongName in storey:
     name = storey[i].LongName
-    print('   Floor',i, ":", storey[i].LongName)
+    print('   Floor',i, ":", name)
     floor_array.append(name)
     floor_number.append(i)
     i=i+1
@@ -734,9 +733,6 @@ for element in all_elements:
 ################################################################ Calculate mass of elements and generates info for the excel sheet
 ################################################################
 
-import time
-start_time = time.time()
-
 
 # The following loop goes through eah storey and collets its amount of strutural elements
 # and their volumes and newly assigned density in order to calulate the weight of these structural elements at each storey
@@ -745,19 +741,18 @@ start_time = time.time()
 
 print('\nPlease have patient, while the geometry and loads are being programed. This will take a few seconds.')
 
+beam_geometry = []
 mass_beams = []
 countbeams = []
+column_geometry = []
 mass_columns = []
 countcolumns = []
+slab_geometry = []
 mass_slabs = []
 countslabs = []
 
 
 # Runs through the elements at each floor level and calculates the total volume and mass of each group of elements 
-
-beam_geometry = []
-column_geometry = []
-slab_geometry = []
 
 i = 0
 
@@ -802,7 +797,6 @@ for x in storey:
             b_geo = [loc, beam_names[p], beam_materials[p], qpset['Length'], qpset['CrossSectionArea'], qpset['NetVolume'],vpset['Density'],Mass]
             beam_geometry.append(b_geo)            
           
-            # Detects wether the location and the element and considered floor match
            
             if type(Mass) == int or type(Mass) == float:
                 # Sum up mass for elements at floor
@@ -887,7 +881,6 @@ for x in storey:
     i=i+1
     
 
-print("--- %s seconds ---" % (time.time() - start_time))    
 ################################################################
 ################################################################ Exports to excel
 ################################################################
@@ -910,7 +903,7 @@ for x in floor_array:
     dataset.append(data)
     i=i+1
 
-# Maps the data so the structure fits the desired excel-strucutre
+# Transform the arrangement of the data to columns
 dataset = list(map(list, zip(*dataset)))
 
 
