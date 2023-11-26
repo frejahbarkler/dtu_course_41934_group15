@@ -4,7 +4,7 @@
 
 *Please check out our guided tutorial of how to use our tool: "HowToRun.pdf" or watch the tutorial video through the link: https://www.youtube.com/watch?v=vmxP8bfCp9U*
 
-*For experts interested in developing the script, a detailed walkthrough can be found in a video by following this link: https://www.youtube.com/watch?v=0MJXjmJ-A38*
+*For experts interested in developing the script, a detailed walkthrough-video can be found by following this link: https://www.youtube.com/watch?v=0MJXjmJ-A38*
 
 **The goal of our tool** is to support the user to verify the structural load capacity. 
 
